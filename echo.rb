@@ -1,10 +1,9 @@
 def echo(msg)
-  Class.new(Struct.new(:msg)) {
-    def >(fname)  ; write(fname, 'w')  ; end
-    def >>(fname) ; write(fname, 'w+') ; end
-    def write(fname, mode)
-      open(fname, mode) {|f| f << msg }
-      msg
-    end
-  }.new(msg + "\n")
+  def msg.>(fname)  ; write(fname, 'w')  ; end
+  def msg.>>(fname) ; write(fname, 'w+') ; end
+  def msg.write(fname, mode)
+    open(fname, mode) {|f| f << self }
+    self
+  end
+  msg
 end
