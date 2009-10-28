@@ -1,6 +1,6 @@
 module FileUtils
-  def echo(msg)
-    msg << "\n"
+  def echo(msg, *opts)
+    msg << "\n" if !opts.include?(:n)
     def msg.>(fname)  ; write(fname, 'w') ; end
     def msg.>>(fname) ; write(fname, 'a') ; end
     def msg.write(fname, mode)
