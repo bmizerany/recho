@@ -4,6 +4,7 @@ def echo(msg)
     def >>(fname) ; write(fname, 'w+') ; end
     def write(fname, mode)
       open(fname, mode) {|f| f << msg }
+      msg
     end
   }.new(msg + "\n")
 end
