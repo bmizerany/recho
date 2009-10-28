@@ -1,10 +1,14 @@
 # echo
 
+## Install
+
+  gem install recho
+
 ## Usage
 
-    include FileUtils
+    require 'recho'
 
-    require 'echo'
+    include FileUtils
 
     echo("foo msg") > "foofile"
     echo("foo msg") >> "foofile"
