@@ -21,6 +21,6 @@ But wait! There's more!
 
 You like that?!  Yeah.  Thought so.
 
-### Alternativly, they are also module-functions on FileUtils
+### Alternatively, they are also module-functions on FileUtils
 
   FileUtils.echo("testing") > "testing.txt"
