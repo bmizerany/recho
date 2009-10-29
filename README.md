@@ -1,4 +1,4 @@
-# echo
+# echo(1) and cat(1) in ruby
 
 ## Install
 
@@ -10,10 +10,17 @@
 
     include FileUtils
 
-    echo("foo msg") > "foofile"
-    echo("foo msg") >> "foofile"
+    echo("foo msg") > "foo.txt"
+    echo("bar msg") >> "bar.txt"
 
-or
+    cat("foo.txt", "bar.txt") # => "foo msg\nbar msg\n"
 
-    FileUtils.echo("foo msg") > "foofile"
-    FileUtils.echo("foo msg") >> "foofile"
+But wait! There's more!
+
+    cat("foo.txt", "bar.txt") > "cat.txt"
+
+You like that?!  Yeah.  Thought so.
+
+### Alternativly, they are also module-functions on FileUtils
+
+  FileUtils.echo("testing") > "testing.txt"

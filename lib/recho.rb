@@ -7,4 +7,9 @@ module FileUtils
     msg
   end
   module_function :echo
+
+  def cat(*files)
+    files.inject(echo("", :n)) {|m, f| m << File.read(f)}
+  end
+  module_function :cat
 end
